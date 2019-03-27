@@ -9,6 +9,7 @@ public class Main {
         System.out.println(check("([{)"));
         System.out.println(check("([{]})"));
         System.out.println(check("((([])))"));
+        System.out.println(check("(([])"));
         System.out.println(check(" "));
         System.out.println(check(""));
     }
