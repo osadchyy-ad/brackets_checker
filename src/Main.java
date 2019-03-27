@@ -14,7 +14,7 @@ public class Main {
     }
 
     private static boolean check(String brackets_input) {
-        if (brackets_input.equals("")) {
+        if (brackets_input.isBlank()){
             return false;
         }
         char[] brackets_array = brackets_input.toCharArray();
