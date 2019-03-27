@@ -4,15 +4,19 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // Only for test
+        // Test
         System.out.println(check("([{}])"));
         System.out.println(check("([{)"));
         System.out.println(check("([{]})"));
         System.out.println(check("((([])))"));
-
+        System.out.println(check(" "));
+        System.out.println(check(""));
     }
 
     private static boolean check(String brackets_input) {
+        if (brackets_input.equals("")) {
+            return false;
+        }
         char[] brackets_array = brackets_input.toCharArray();
         Stack<Character> brackets_list = new Stack<>();
         for (char c : brackets_array) {
@@ -25,7 +29,7 @@ public class Main {
             } else if ((c == '}') && (brackets_list.peek() == '{')) {
                 brackets_list.pop();
             } else {
-                break;
+                return false;
             }
         }
         return brackets_list.isEmpty();
